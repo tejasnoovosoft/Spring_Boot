@@ -1,10 +1,12 @@
 package com.example.day1
 
+import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
+import org.springframework.context.annotation.Primary
 import org.springframework.context.support.ClassPathXmlApplicationContext
 
 @SpringBootApplication
@@ -14,6 +16,12 @@ class Day1Application
 class AppConfig {
     @Bean
     fun myService(): MyService {
+        return MyService()
+    }
+
+    @Bean
+    @Primary
+    fun myService2() : MyService{
         return MyService()
     }
 

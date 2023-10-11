@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RestController
 class CustomerController {
 
     @Autowired
-    val obj = CustomerService()
+    val customerService = CustomerService()
 
     @GetMapping("/list")
     fun getUserList() : List<Customer>{
-        return obj.getUserList()
+        return customerService.getUserList()
     }
 }
